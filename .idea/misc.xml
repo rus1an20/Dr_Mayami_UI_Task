@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.25972222222222224" />
+        <entry key="app/src/main/res/drawable/button_st.xml" value="0.26944444444444443" />
         <entry key="app/src/main/res/drawable/call_icon.xml" value="0.25972222222222224" />
         <entry key="app/src/main/res/drawable/ic_baseline_zoom_out_map_24.xml" value="0.25972222222222224" />
         <entry key="app/src/main/res/drawable/ic_call_icon.xml" value="0.25972222222222224" />
