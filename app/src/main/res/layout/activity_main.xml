@@ -2,190 +2,126 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/canvas"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
 
-    <ImageView
+    <View
         android:id="@+id/back_img"
         android:layout_width="match_parent"
         android:layout_height="275dp"
-        android:src="@drawable/img"
+        android:background="@drawable/back_top"
         app:layout_constraintDimensionRatio="w,2:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ImageContrastCheck" />
 
-    <ImageView
-        android:id="@+id/avatar_small"
-        android:layout_width="89dp"
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="98dp"
         android:layout_height="106dp"
         android:layout_marginStart="26dp"
-        android:layout_marginTop="25dp"
-        android:src="@drawable/avatar"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/back_img" />
+        android:layout_marginTop="24.66dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_img">
+
+        <ImageView
+            android:layout_width="113dp"
+            android:layout_height="130dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar"
+            android:translationX="-15dp" />
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/textView"
+        style="@style/name_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
         android:text="@string/name"
-        android:fontFamily="@font/open_sans_bold"
-        android:textColor="@color/black"
         android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/avatar_small"
-        app:layout_constraintTop_toTopOf="@+id/avatar_small" />
+        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="@+id/cardView" />
 
-    <ImageView
-        android:id="@+id/line"
-        android:layout_width="198dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="5dp"
+    <View
+        android:id="@+id/view"
+        android:layout_width="192dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/line" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
-        android:id="@+id/dental_surgeon"
+        android:id="@+id/textView2"
+        style="@style/bottom_name_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/open_sans_semibold"
+        android:layout_marginTop="16dp"
         android:text="@string/dental_surgeon"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/youe_friendly_dental_friend"
-        app:layout_constraintStart_toStartOf="@+id/line"
-        app:layout_constraintTop_toBottomOf="@+id/line" />
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
     <TextView
-        android:id="@+id/youe_friendly_dental_friend"
+        android:id="@+id/textView3"
+        style="@style/bottom_name_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="2dp"
-        android:fontFamily="@font/open_sans_semibold"
+        android:layout_marginTop="8dp"
         android:text="@string/youe_friendly_dental_friend"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/avatar_small"
-        app:layout_constraintStart_toStartOf="@+id/dental_surgeon" />
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="352dp"
-        android:layout_height="52dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginRight="26dp"
-        android:src="@drawable/call_contact"
+
+    <Button
+        app:layout_constraintCircleRadius="8dp"
+        android:background="@color/button"
+        android:id="@+id/button"
+        app:cardCornerRadius="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="26dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/avatar_small" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView"/>
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="25dp"
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="@string/make_an_appointment"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        android:layout_marginEnd="51dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/button" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="19dp"
         android:layout_height="19dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="25dp"
-        android:src="@drawable/mail_icon"
-        app:layout_constraintBottom_toTopOf="@+id/imageView5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:src="@drawable/http_icon"
-        app:layout_constraintBottom_toTopOf="@+id/imageView6"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="26dp"
-        android:layout_height="26dp"
-        android:src="@drawable/whatsapp_icon"
-        app:layout_constraintBottom_toTopOf="@+id/imageView7"
-        app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="26dp"
-        android:layout_height="26dp"
-        android:src="@drawable/book_icon"
-        app:layout_constraintBottom_toTopOf="@+id/imageView8"
-        app:layout_constraintStart_toStartOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="18dp"
-        android:layout_height="23dp"
-        android:layout_marginBottom="16dp"
-        android:src="@drawable/gps_icon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView7"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
-
-    <TextView
-        style="@style/contact"
-        android:id="@+id/http"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/www_dental_com"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintStart_toStartOf="@+id/whatsapp"
-        app:layout_constraintTop_toTopOf="@+id/imageView5" />
-
-    <TextView
-        style="@style/contact"
-        android:id="@+id/mail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/oleg_mayami93_gmail_com"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintStart_toStartOf="@+id/whatsapp"
-        app:layout_constraintTop_toTopOf="@+id/imageView4" />
-
-    <TextView
-        style="@style/contact"
-        android:id="@+id/phonebook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/save_to_phonebook"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
-        app:layout_constraintStart_toStartOf="@+id/whatsapp"
-        app:layout_constraintTop_toTopOf="@+id/imageView7" />
-
-    <TextView
-        android:id="@+id/gps"
-        style="@style/contact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/abdumomunova_146"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-        app:layout_constraintStart_toStartOf="@+id/whatsapp"
-        app:layout_constraintTop_toTopOf="@+id/imageView8" />
-
-    <TextView
-        style="@style/contact"
-        android:id="@+id/whatsapp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/whatsapp_me"
-        android:layout_marginStart="12dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toTopOf="@+id/imageView6" />
-
+        android:layout_marginStart="51dp"
+        android:background="@drawable/ic_call_icon"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toTopOf="@+id/button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
